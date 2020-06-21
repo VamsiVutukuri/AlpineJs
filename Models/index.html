@@ -10,8 +10,9 @@
 
             <div x-data = "{isOpen : false}">
                 <button
-                    @click = "isOpen = true"
-                    x-ref = "modalCloseButton"
+                    @click = "isOpen = true
+                    $nextTick(() => $refs.modalCloseButton.focus())
+                    "
                     class="bg-blue-700 text-white px-4 py-3 mt-4 text-sm rounded"                   
                 >
                     Open Modal
@@ -32,7 +33,7 @@
                                 
                                 <button 
                                 @click = "isOpen = false"
-                                $nextTick( () => $refs.modalCloseButton.focus())
+                                x-ref = "modalCloseButton"
                                 class="bg-blue-700 text-white px-4 py-3 mt-4 text-sm rounded">Close Modal</button>
                             </div>
                         </div>
