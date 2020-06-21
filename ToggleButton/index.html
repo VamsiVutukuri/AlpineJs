@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+    <!--Linking Alpine js CDN -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.8/dist/alpine.js" defer></script>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Alpine JS </h1>
+    <h3 style="text-align: center;">Chapter -1  : Toggling buttons </h3>
+    
+    <div x-data = "{isOpen : true}">   
+   <!-- x-data creates a new element or component in alpine -->
+     <!-- <button x-on:click = "isOpen = !isOpen "> Click Me! </button>    -->
+        <button @click = "isOpen = !isOpen"> Click Me ! </button>
+        <!-- we are negating the value we assigned before -->
+        <p x-show = "isOpen" >This is a toggle button built with alpine js</p>
+        <ul x-show = "!isOpen"> States and listeners used
+            <li>x-data</li>
+            <li>x-show</li>
+            <li>x-on/@click</li>
+        </ul>  
+    </div>
+
+</body>
