@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.8/dist/alpine.js" defer></script>
+</head>
+
+<body class="bg-yellow-300">
+    <div class="container mx-auto px-4 mt-4" x-data="{img : 'img1'}">
+        <div>
+            <img src="./p1.jpg" alt="middle age man" x-show="img === 'img1'">
+            <img src="./p2.jpg" alt="old man" x-show="img === 'img2'">
+            <img src="./p3.jpg" alt="young girl" x-show="img === 'img3'">
+        </div>
+        <div class="flex items-center mt-4">
+            <a href="#" class="border border-transparent hover:border-blue-500"
+                :class="{'border-green-700':img === 'img1'}" @click.prevent="img = 'img1'"><img src="./p1.jpg"
+                    alt="middle age man" class="w-12"></a>
+            <a href="#" class="border border-transparent hover:border-blue-500 ml-2"
+                :class="{'border-green-700':img === 'img2'}" @click.prevent="img = 'img2'"><img src="./p2.jpg"
+                    alt="old man" class="w-12"></a>
+            <a href="#" class="border border-transparent hover:border-blue-500 ml-2"
+                :class="{'border-red-700':img === 'img3'}" @click.prevent="img = 'img3'"><img src="./p3.jpg"
+                    alt="young girl " class="w-12"></a>
+        </div>
+    </div>
+</body>
+
+</html>
