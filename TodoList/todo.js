@@ -2,7 +2,7 @@ function todos() {
     return {
         todos: [{
             id: 1,
-            title: 'Finish Alpine',
+            title: 'Sample Task',
             isComplete: false
         }],
         todoTitle:' ',
