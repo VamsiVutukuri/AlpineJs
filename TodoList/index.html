@@ -17,7 +17,14 @@
                 
                 <ul class="mb-6">
                     <template x-for="todo in todos" :key="todo.id">
-                        <li class="flex items-center justify-between">
+                        <li 
+                        x-transition:enter="transition  transform ease-out origin-center duration-500"
+                        x-transition:enter-start= "opacity-0 scale-75"
+                        x-transition:enter-end= "opacity-100 scale-100"
+                        x-transition:leave="transition transform  ease-out origin-top-right duration-500"
+                        x-transition:leave-start="opacity-100 scale-100"
+                        x-transition:leave-end="opacity-0 scale-75"
+                        class="flex items-center justify-between">
                             <div class="flex items-center" :class="{ 'line-through' : todo.isComplete }">
                                 <input type="checkbox" x-model = "todo.isComplete">
                                 <div class="ml-3" x-text="todo.title"></div>
